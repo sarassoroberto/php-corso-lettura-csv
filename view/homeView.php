@@ -1,25 +1,22 @@
-<?php include "../class/inc.php"; ?>
-<?php include "./parts/head.php" ?>
+<?php include "./view/parts/head.php" ?>
 	<body>
 
-		<?php include "./parts/navbar.php" ?>
-		<?php include "./parts/header.php" ?>
-	  
-
-
-		<main class="container">
+		<?php include "./view/parts/navbar.php" ?>
+		<?php include "./view/parts/header.php" ?>
+      
+        <main class="container">
 
 			<div class="row">
 				<div class="col-md-8 main-content">
-						<?php include "./parts/article-list.php" ?>
-					<aside class="pl-sm-0 row">
-						<?php include "./parts/article-list-bottom-aside.php" ?>
-					</aside>
+						<?php include "./view/parts/article-list.php" ?>
+                        <aside class="pl-sm-0 row">
+                            <?php include "./view/parts/article-list-bottom-aside.php" ?>
+                        </aside>
 				</div>
 				<aside class="col-md-4 pl-sm-0">
 					
-					<?php include "./parts/article-list-small.php" ?>
-					<?php include "./parts/article-list-small.php" ?>
+					<?php include "./view/parts/article-list-small.php" ?>
+					<?php include "./view/parts/article-list-small.php" ?>
 					
 				</aside>
 			</div>

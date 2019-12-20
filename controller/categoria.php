@@ -7,8 +7,6 @@ include "../class/inc.php";
 		<?php include "./parts/navbar.php" ?>
 		<?php include "./parts/header.php" ?>
 	  
-
-
 		<main class="container">
 
 			<div class="row">

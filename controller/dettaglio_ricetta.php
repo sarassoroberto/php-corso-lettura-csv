@@ -6,12 +6,12 @@ $ricette = new CSVReader('../ricette.csv');
 $ricetta = $ricette->getDataByIndex($_GET['id'])->getResult();
 
 ?>
-<?php include "./parts/head.php" ?>
+<?php include "./view/parts/head.php" ?>
 
 <body>
 
-  <?php include "./parts/navbar.php" ?>
-  <?php include "./parts/header.php" ?>
+  <?php include "./view/parts/navbar.php" ?>
+  <?php include "./view/parts/header.php" ?>
 
   <!-- Page Content -->
   <main class="container-fluid">
@@ -46,7 +46,7 @@ $ricetta = $ricette->getDataByIndex($_GET['id'])->getResult();
           </div>
         </div>
         <div class="col-md-4">
-          <!-- <?php include "./parts/photo-list.php" ?> -->
+          <!-- <?php include "./view/parts/photo-list.php" ?> -->
         </div>
       </div>
       <!-- /.row -->
@@ -55,7 +55,7 @@ $ricetta = $ricette->getDataByIndex($_GET['id'])->getResult();
       <div class="container">
         <!-- Related Ricette Row -->
         
-        <?php include "./parts/article-list-horizontal.php" ?>
+        <?php include "./view/parts/article-list-horizontal.php" ?>
         <!-- /.row -->
 
       </div>

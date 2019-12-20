@@ -5,7 +5,7 @@ class CSVReader {
     private $res;
     public function __construct($file) {
         
-        $csv_file = new SplFileObject("../ricette.csv");
+        $csv_file = new SplFileObject($file);
 
         $headers = $csv_file->fgetcsv();
         $res = [];
