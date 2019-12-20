@@ -1,0 +1,30 @@
+
+/* 
+main{
+    color: white;
+    
+}
+.main-content {background-color: red;} 
+aside {background-color: blue;}  
+*/
+
+
+.jumbotron {
+
+    /* background-color: tomato; */
+}
+
+body{background-color: rgb(173, 173, 173);}
+
+article {background-color: white;}
+
+.bs-tools *{
+    width: 3rem;
+    text-align: center;
+    position: absolute;
+    background-color: blue;
+    padding: 0.1rem;
+    color: cornsilk;
+    text-transform: uppercase;
+}
+
