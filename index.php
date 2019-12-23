@@ -4,7 +4,14 @@ ini_set('display_errors', 1);
 //routing
 $controller = filter_input(INPUT_GET,'controller')  ;
 $controller_path = "./controller/$controller.php";
-if(isset($controller) && $controller!='' && file_exists($controller_path)){
+
+// echo "<pre>".print_r($_SERVER,true)."</pre>";
+
+if ($_SERVER['REQUEST_URI'] == '/') {
+    include ('home.php');
+} 
+
+else if(isset($controller) && $controller!='' && file_exists($controller_path)){
 
     
     include ($controller_path);

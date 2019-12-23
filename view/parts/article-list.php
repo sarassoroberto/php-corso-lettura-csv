@@ -11,7 +11,7 @@
 									<div class="d-flex justify-content-between align-items-center">
 
 										<h1 class="h4 my-3">
-											<a href="dettaglio_ricetta.php?id=<?=$key?>">
+											<a href="?controller=dettaglio&cat=<?=$key?>">
 													<?= $ricetta['Titolo Articolo'] ?>
 												</a>
 											</h1>
@@ -28,8 +28,4 @@
 							</article>
                         <?php } ?>
 
-						
-
-					
-
-					</section>
+</section>
