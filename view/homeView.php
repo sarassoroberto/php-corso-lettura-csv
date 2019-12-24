@@ -10,13 +10,14 @@
 				<div class="col-md-8 main-content">
 						<?php include "./view/parts/article-list.php" ?>
                         <aside class="pl-sm-0 row">
-                            <?php include "./view/parts/article-list-bottom-aside.php" ?>
+							<!-- <?php include "./view/parts/article-list-bottom-aside.php" ?> -->
+							<?php  ArticleList::render($antipasti,'article-list-horizontal');?>
                         </aside>
 				</div>
 				<aside class="col-md-4 pl-sm-0">
-					
-					<?php include "./view/parts/article-list-small.php" ?>
-					<?php include "./view/parts/article-list-small.php" ?>
+				<?php  ArticleList::render($antipasti,'article-list-small',3);?>
+				<?php  ArticleList::render($antipasti,'article-list-small',3);?>
+				
 					
 				</aside>
 			</div>

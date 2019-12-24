@@ -47,7 +47,8 @@
             <div class="container">
                 <!-- Related Ricette Row -->
 
-                <?php include "./view/parts/article-list-horizontal.php" ?>
+
+                <?php  ArticleList::render($categoryRelated,'article-list-horizontal');?>
                 <!-- /.row -->
 
             </div>

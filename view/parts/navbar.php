@@ -11,9 +11,9 @@
 						 <?php 
 						  
 						 
-						 foreach ($categories as $category) { ?>
+						 foreach ($menuitems as $item) { ?>
 							<li class="nav-item active">
-								<a class="nav-link" href="categoria.php?cat=<?php echo $category ?>"><?php echo $category ?><span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="categoria.php?cat=<?php echo $item ?>"><?php echo $item ?><span class="sr-only">(current)</span></a>
 						  	</li>
 						<?php } ?>
 						 

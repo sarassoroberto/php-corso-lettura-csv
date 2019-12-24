@@ -1,13 +1,17 @@
 <?php 
 
 include "./class/CSVReader.php";
+include "./class/ArticleList.php";
 
 $ricette = new CSVReader('./csv/ricette.csv');
 
-$categoriaPrincipale = isset($_GET['cat'])  ? $_GET['cat'] : 'Antipasti';
-$ricetteCategoriaPrincipale = $ricette->getDataByKey('Categoria',$categoriaPrincipale)->getResult(); 
+$ricetta = $ricette->getDataByIndex($_GET['id'])->getResult();
+$menuitems = $ricette->getAllKeyValues('Categoria')->getResult(); 
+$category = $ricetta['Categoria'];
 
-$categories = $ricette->getAllKeyValues('Categoria')->getResult(); 
+$categoryRelated = $ricette->getDataByKey('Categoria',$category,3)->getResult();
 
-include "./view/homeView.php";
+print_r($categoryRelated);
+
+include "./view/dettaglio.php";
 ?>

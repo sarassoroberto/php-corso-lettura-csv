@@ -3,7 +3,7 @@
 	<!-- <h3 class="my-3">Preparazione</h3> -->
 	<div class="row">
 
-		<?php  foreach ([1,2,3,4] as $key => $value) { ?>
+		<?php  foreach ($articleList as $key => $article) { ?>
 					<div class="col-md-3">
 					<article class="row no-gutters mb-3">
 						<div class="col-3 col-sm-12 ">
@@ -11,9 +11,8 @@
 		
 						</div>
 						<div class="col-8 col-sm-12 px-3">
-							<h1 class="h4 mb-1">titolo</h1>
-							<p>Lorem ipsum dolor sit amet consectetur
-							</p>
+							<h1 class="h4 mb-1"><?php echo $article['Titolo Articolo'] ?></h1>
+							<p> <?= wordsLimit($article['preparazione_corretta'],5) ?> </p>
 		
 						</div>
 		

@@ -17,11 +17,15 @@ class CSVReader {
         $this->data = $res;
     }
 
-    public function getDataByKey($key,$value)
+    public function getDataByKey($key,$value,$limit=0)
     {
         $res = array_filter($this->data,function($row) use ($key,$value){
                 return $row[$key] == $value;
         });
+
+        if($limit){
+            $res = array_slice($res,0,$limit);
+        }
 
         $this->res = $res;
         return $this;

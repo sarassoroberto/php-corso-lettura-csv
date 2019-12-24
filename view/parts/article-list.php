@@ -1,6 +1,6 @@
 <section class="article-list mb-4">
 						<h1 class="h3"><?= $categoriaPrincipale ?></h1>
-						<?php foreach ($ricetteCategoriaPrincipale as $key => $ricetta) { ?>
+						<?php foreach ($ricetteCategoriaPrincipale as $id => $ricetta) { ?>
 							
                             <article class="row no-gutters mb-3">
 								<div class="col-md-3">
@@ -11,7 +11,7 @@
 									<div class="d-flex justify-content-between align-items-center">
 
 										<h1 class="h4 my-3">
-											<a href="?controller=dettaglio&cat=<?=$key?>">
+											<a href="?controller=dettaglio&id=<?=$id?>">
 													<?= $ricetta['Titolo Articolo'] ?>
 												</a>
 											</h1>
