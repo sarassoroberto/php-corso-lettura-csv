@@ -1,7 +1,8 @@
 <section class="article-list mb-4">
-							<h1 class="h3">le più veloci</h1>
-						
-							<?php  foreach ($articleList as $key => $article) { ?>
+	
+	<h1 class="h3"><?= $setting['header']?></h1>
+	
+	<?php  foreach ($setting['data'] as $key => $article) { ?>
 							<article class="row no-gutters mb-3">
 									<div class="col-3">
 										<img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&amp;text=foto+ricetta" alt="">

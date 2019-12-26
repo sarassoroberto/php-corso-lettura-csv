@@ -11,12 +11,29 @@
 						<?php include "./view/parts/article-list.php" ?>
                         <aside class="pl-sm-0 row">
 							<!-- <?php include "./view/parts/article-list-bottom-aside.php" ?> -->
-							<?php  ArticleList::render($antipasti,'article-list-horizontal');?>
+							
+							<?php ArticleList::render([
+									'header' => 'Ciccio 3',
+									'data' => $antipasti,
+									'view' => 'article-list-bottom-aside',
+									'limit' => 3,
+								  ]);?>
                         </aside>
 				</div>
 				<aside class="col-md-4 pl-sm-0">
-				<?php  ArticleList::render($antipasti,'article-list-small',3);?>
-				<?php  ArticleList::render($antipasti,'article-list-small',3);?>
+				<?php ArticleList::render([
+						'header' => 'Ciccio 2',
+						'data' => $antipasti,
+						'view' => 'article-list-small',
+						'limit' => 3,
+				]);?>
+
+				<?php ArticleList::render([
+						'header' => 'Ciccio 1',
+						'data' => $antipasti,
+						'view' => 'article-list-small',
+						'limit' => 3,
+				]);?>
 				
 					
 				</aside>
