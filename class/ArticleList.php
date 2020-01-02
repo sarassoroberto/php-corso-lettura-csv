@@ -7,4 +7,8 @@ class ArticleList{
         include "./view/parts/$template.php";
     }
 
+    public static function articleDetailUrl($index){
+        return "controller=dettaglio&id=$index";
+    }
+
 }

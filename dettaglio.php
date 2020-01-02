@@ -11,7 +11,6 @@ $category = $ricetta['Categoria'];
 
 $categoryRelated = $ricette->getDataByKey('Categoria',$category,3)->getResult();
 
-print_r($categoryRelated);
 
 include "./view/dettaglio.php";
 ?>

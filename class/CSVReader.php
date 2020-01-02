@@ -8,10 +8,13 @@ class CSVReader {
         $csv_file = new SplFileObject($file);
 
         $headers = $csv_file->fgetcsv();
+
+
         $res = [];
         while (!$csv_file->eof()) {    
-            
+        
             $row_content = $csv_file->fgetcsv();
+        
             $res[] = array_combine($headers,$row_content);
         }
         $this->data = $res;
@@ -26,6 +29,7 @@ class CSVReader {
         if($limit){
             $res = array_slice($res,0,$limit);
         }
+
 
         $this->res = $res;
         return $this;

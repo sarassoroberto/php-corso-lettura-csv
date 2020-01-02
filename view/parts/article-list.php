@@ -1,10 +1,10 @@
 <section class="article-list mb-4">
-						<h1 class="h3"><?= $categoriaPrincipale ?></h1>
-						<?php foreach ($ricetteCategoriaPrincipale as $id => $ricetta) { ?>
+						<h1 class="h3"><?= $setting['header'] ?></h1>
+						<?php foreach ($setting['data'] as $key => $value) { ?>
 							
                             <article class="row no-gutters mb-3">
 								<div class="col-md-3">
-									<img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
+									<img class="img-fluid" src="https://dummyimage.com/500x500/ebdfeb/c0c2e0" alt="">
 
 								</div>
 								<div class="col-md-9 p-3 pt-sm-0">
@@ -12,16 +12,16 @@
 
 										<h1 class="h4 my-3">
 											<a href="?controller=dettaglio&id=<?=$id?>">
-													<?= $ricetta['Titolo Articolo'] ?>
+													<?= $value['Titolo Articolo'] ?>
 												</a>
 											</h1>
 											
 											
                                         </div>
-                                        <p> <?= wordsLimit($ricetta['preparazione_corretta'],20) ?> </p>
+                                        <p> <?= wordsLimit($value['preparazione_corretta'],20) ?> </p>
                                         <div class="info h6">
-												<i  class="fa fa-clock-o"></i> <?= $ricetta['Tempo_stimato'] ?>
-												<i  class="fa fa-user"></i> <?= $ricetta['Nome'] ?>
+												<i  class="fa fa-clock-o"></i> <?= $value['Tempo_stimato'] ?>
+												<i  class="fa fa-user"></i> <?= $value['Nome'] ?>
 										</div>
 								</div>
 

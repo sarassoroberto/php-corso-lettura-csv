@@ -6,14 +6,14 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav">
 						  <li class="nav-item active">
-							<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="index.php?controller=home">Home <span class="sr-only">(current)</span></a>
 						  </li>
 						 <?php 
 						  
 						 
 						 foreach ($menuitems as $item) { ?>
 							<li class="nav-item active">
-								<a class="nav-link" href="categoria.php?cat=<?php echo $item ?>"><?php echo $item ?><span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="index.php?controller=categoria&cat=<?php echo $item ?>"><?php echo $item ?><span class="sr-only">(current)</span></a>
 						  	</li>
 						<?php } ?>
 						 
