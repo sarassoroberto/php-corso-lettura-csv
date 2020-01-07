@@ -13,6 +13,7 @@ $antipasti = $ricette->getDataByKey('Categoria','Antipasti')->limit(3)->getResul
 
 $PrimiPiatti = $ricette->getDataByKey('Categoria','Primi Piatti')->limit(3)->getResult();
 $Contorni = $ricette->getDataByKey('Categoria','Contorni')->limit(3)->getResult();
+$PrimiPiattiProgressive = $ricette->getDataByKey('Categoria','Contorni')->limit(10)->getResult();
 
 
 

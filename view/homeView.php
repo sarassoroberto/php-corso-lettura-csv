@@ -1,5 +1,7 @@
 <?php include "./view/parts/head.php" ?>
-<?php include "./component/carousel/carousel.php" ?>
+<?php include "./component/Carousel.php" ?>
+<?php include "./component/TwoColumn.php" ?>
+<?php include "./component/ProgressiveItemCol.php" ?>
 
 <body>
 
@@ -11,51 +13,45 @@
 		<div class="row">
 			<div class="col-md-12 main-content">
 				
-
 				<?php 
-	
-				// print_r($Contorni);
-
 				new Carousel([
-					'items'=>$Contorni,
-					'itemTitle'=>'Titolo Articolo',
-					'itemSubTitle'=>'Categoria',
-
-				]);
-				
+							'items'=>$Contorni,
+							'itemTitle'=>'Titolo Articolo',
+							'itemSubTitle'=>'Categoria',
+							'itemContent'=>'preparazione_corretta',
+							'itemRender' => 'TwoColumn'
+							]); 
 				?>
 
-<?php 
-	
-	// print_r($Contorni);
-
-	new Carousel([
-		'items'=>$Contorni,
-		'itemTitle'=>'Titolo Articolo',
-		'itemSubTitle'=>'Categoria',
-
-	]);
-	
-	?>
-
-<?php 
-	
-	// print_r($Contorni);
-
-	new Carousel([
-		'items'=>$Contorni,
-		'itemTitle'=>'Titolo Articolo',
-		'itemSubTitle'=>'Categoria',
-
-	]);
-	
-	?>
-
+			</div>
+		
+		</div>
+		<div class="row">
+			<div class="col-md-6 main-content">
+				
+				<?php 
+				new Carousel([
+							'items'=>$Contorni,
+							'itemTitle'=>'Titolo Articolo',
+							'itemSubTitle'=>'Categoria',
+							'colPadding'=>'px-3 py-3 pr-5',
+							'itemRender' => 'TwoColumn'
+							]); 
+				?>
 
 			</div>
 		
 		</div>
 
+				<?php 
+				new ProgressiveItemCol([
+							'items'=>$PrimiPiattiProgressive,
+							'itemTitle'=>'Titolo Articolo',
+							'itemSubTitle'=>'Categoria',
+							'colPadding'=>'px-3 py-3 pr-5',
+							'itemRender' => 'TwoColumn'
+							]); 
+				?>
 		
 	</main>
 

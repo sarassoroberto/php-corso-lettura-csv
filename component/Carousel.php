@@ -2,17 +2,22 @@
 
 Class Carousel {
     
-    public $header ="";
-    public $itemTitle="";
-    public $items ="";
+    public $header = "";
+    public $itemTitle= "";
+    public $items = "";
+    public $itemRender = "";
 
     public static $count=0;
     public $id;
 
     public function __construct($setting) {
+        //print_r($setting);
+        $this->setting = $setting;
         $this->items = $setting['items'];
         $this->itemTitle = $setting['itemTitle'];
+        $this->itemRender = $setting['itemRender'];
         $this->itemSubTitle = $setting['itemSubTitle'];
+        $this->itemContent = $setting['itemContent'];
         $this->id = "_".self::$count++ ;
         $this->render();
     }
@@ -23,9 +28,11 @@ Class Carousel {
     }
 
 
-    public function render(){ ?>
+    public function render(){ 
+      
+        ?>
         <h1><?= $this->header ?></h1>
-        <div id="<?= $this->id ?>" class="carousel slide" data-ride="carousel">
+        <div id="<?= $this->id ?>" class="carousel slide mb-4" data-ride="carousel">
 
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
@@ -40,7 +47,9 @@ Class Carousel {
 
                 <!-- The slideshow -->
                 <div class="carousel-inner">
-                <?php foreach ($this->items as $key => $item) { ?>
+                <?php foreach ($this->items as $key => $item) { 
+                    if(isset($this->itemrender)){
+                    ?>
                     <div class="carousel-item <?= $this->getActive($key) ?>">
                         
                         <div class="carousel-caption d-none d-md-block">
@@ -50,7 +59,16 @@ Class Carousel {
                         <img class="img-fluid" src="./view/asset/img/01_Fagioli.jpg" 
                              alt="<?= $item[$this->itemTitle] ?>" >
                     </div>
-                <?php } ?>
+                <?php 
+                    } // if
+                    else{
+                        ?>
+                        <div class="carousel-item <?= $this->getActive($key) ?>">
+                            <?php  new $this->itemRender($this->setting,$item); ?>
+                        </div>
+                    <?php } // else
+                    } 
+                ?>
              
                 </div>
 

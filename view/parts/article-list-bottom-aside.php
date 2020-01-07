@@ -7,7 +7,7 @@
 			<div class="col-md-4 px-2">
 
 			
-				<article class="mb-3">
+			<article class="mb-3">
 					<div class="article-img">
 						<img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
 					</div>

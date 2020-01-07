@@ -65,7 +65,16 @@ class CSVReader {
         return count($this->res);
     }
 
+    public function convertToJson()
+    {
+        $this->res = json_encode($this->res);
+    }
 
+
+    public function transform(callable $callback)
+    {
+        $this->res = array_map($callback,$this->data);
+    }
 
 
 }

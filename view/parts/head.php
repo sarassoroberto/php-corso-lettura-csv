@@ -17,5 +17,31 @@
    text-overflow: ellipsis;
  }
 
+ 
+.carousel-control-next, .carousel-control-prev {
+    background-color: 
+    #00000059;
+    width: 2rem;
+}
+
+
+
+.content {
+    height: 13.5rem !important;
+   
+    overflow: hidden;
+}
+
+.carousel-indicators {
+  background-color: white;
+  margin: 0;
+  bottom: -26px;
+}
+
+.carousel-indicators li {
+  background-color: #737373;
+  height: 0.3rem;
+}
+
 		</style>
 	</head>
