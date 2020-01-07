@@ -8,14 +8,23 @@ class CSVReader {
         $csv_file = new SplFileObject($file);
 
         $headers = $csv_file->fgetcsv();
+        
+        // var_dump($headers);
+        // $row = $csv_file->fgetcsv();
+        // var_dump($row);
 
+        // var_dump(array_combine($headers,$row));
 
         $res = [];
         while (!$csv_file->eof()) {    
         
             $row_content = $csv_file->fgetcsv();
-        
-            $res[] = array_combine($headers,$row_content);
+            if(count($row_content)!=1){
+
+                $row = array_combine($headers,$row_content);   
+                // var_dump($row_content);
+                $res[] = $row;
+            }
         }
         $this->data = $res;
     }
@@ -73,9 +82,30 @@ class CSVReader {
 
     public function transform(callable $callback)
     {
-        $this->res = array_map($callback,$this->data);
+        $this->res = array_map($callback,$this->data,array_keys($this->data));
+
+        return $this;
     }
 
+    /**
+     * Get the value of data
+     */ 
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Set the value of data
+     *
+     * @return  self
+     */ 
+    public function setData($data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
 
 }
 
@@ -95,4 +125,6 @@ function parseList($content){
 
 function wordsLimit($s, $limit=10) {
     return preg_replace('/((\w+\W*){'.($limit-1).'}(\w+))(.*)/', '${1}', $s)."...";   
+
+
 }
