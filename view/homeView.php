@@ -2,6 +2,8 @@
 <?php include "./component/Carousel.php" ?>
 <?php include "./component/TwoColumn.php" ?>
 <?php include "./component/ProgressiveItemCol.php" ?>
+<?php include "./component/RicettaArticle.php" ?>
+<?php include "./component/ArticleListBigAndList.php" ?>
 
 <body>
 
@@ -26,32 +28,36 @@
 			</div>
 		
 		</div>
-		<div class="row">
-			<div class="col-md-6 main-content">
-				
-				<?php 
-				new Carousel([
-							'items'=>$Contorni,
+		<?php 
+			new ArticleListBigAndList([
+							'header' => 'Primi',
+							'items'=>$PrimiPiattiBox,
 							'itemTitle'=>'Titolo Articolo',
 							'itemSubTitle'=>'Categoria',
 							'colPadding'=>'px-3 py-3 pr-5',
 							'itemRender' => 'TwoColumn'
 							]); 
-				?>
-
-			</div>
-		
-		</div>
-
-				<?php 
-				new ProgressiveItemCol([
-							'items'=>$PrimiPiattiProgressive,
+		?>
+		<?php 
+			new ArticleListBigAndList([
+							'header' => 'Secondi',
+							'items'=>$SecondiBox,
 							'itemTitle'=>'Titolo Articolo',
 							'itemSubTitle'=>'Categoria',
 							'colPadding'=>'px-3 py-3 pr-5',
 							'itemRender' => 'TwoColumn'
 							]); 
-				?>
+		?>
+		<?php 
+			new ArticleListBigAndList([
+							'header' => 'Contorni',
+							'items'=>$ContorniBox,
+							'itemTitle'=>'Titolo Articolo',
+							'itemSubTitle'=>'Categoria',
+							'colPadding'=>'px-3 py-3 pr-5',
+							'itemRender' => 'TwoColumn'
+							]); 
+		?>
 		
 	</main>
 

@@ -2,7 +2,6 @@
 
 include "./class/CSVReader.php";
 include "./class/ArticleList.php";
-
 $ricette = new CSVReader('./csv/ricette3.csv');
 
 $categoriaPrincipale = isset($_GET['cat'])  ? $_GET['cat'] : 'Antipasti';
@@ -13,8 +12,12 @@ $antipasti = $ricette->getDataByKey('Categoria','Antipasti')->limit(3)->getResul
 
 $PrimiPiatti = $ricette->getDataByKey('Categoria','Primi Piatti')->limit(3)->getResult();
 $Contorni = $ricette->getDataByKey('Categoria','Contorni')->limit(3)->getResult();
-$PrimiPiattiProgressive = $ricette->getDataByKey('Categoria','Contorni')->limit(10)->getResult();
 
+$ContorniBox = $ricette->getDataByKey('Categoria','Contorni')->limit(10)->getResult();
+$PrimiPiattiBox = $ricette->getDataByKey('Categoria','Primi Piatti')->limit(10)->getResult();
+$SecondiBox = $ricette->getDataByKey('Categoria','Secondi piatti')->limit(10)->getResult();
+
+// print_r($PrimiPiattiProgressive[0]);
 
 
 include "./view/homeView.php";

@@ -7,13 +7,9 @@ class ProgressiveItemCol
 
     public function __construct($setting)
     {
-        //print_r($setting);
+        $this->header = $setting['header'];
         $this->setting = $setting;
         $this->items = $setting['items'];
-        // $this->itemTitle = $setting['itemTitle'];
-        // $this->itemRender = $setting['itemRender'];
-        // $this->itemSubTitle = $setting['itemSubTitle'];
-        // $this->itemContent = $setting['itemContent'];
         $this->colSequence = $setting['colSequence'];
         $this->id = "_" . self::$count++;
         $this->render();
@@ -23,109 +19,51 @@ class ProgressiveItemCol
 
     public function render()
     { ?>
-        <div class="row">
-
-            <div class="col-md-6">
-
-                <article class="mb-3">
-                    <div class="article-img">
-                        <img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
-                    </div>
-                    <div class="article-content">
-                        <h1 class="h6 mb-1 truncate"><?= $this->items[0]['Titolo Articolo'] ?></h1>
-                        <p class="truncate">
-                            <?= wordsLimit($this->items[0]['preparazione_corretta'], 6) ?>
-                        </p>
-
-                    </div>
-                </article>
-                
+    <?php "<pre>".print_r($this->items[0],true)."</pre>" ?>
+        <section>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><?= $this->header ?></h1>
+                </div>
             </div>
-            <div class="col-md-6">
+            <div class="row">
 
-                <article class="mb-3">
-                    <div class="article-img">
-                        <img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
-                    </div>
-                    <div class="article-content">
-                        <h1 class="h6 mb-1 truncate"><?= $this->items[1]['Titolo Articolo'] ?></h1>
-                        <p class="truncate">
-                            <?= wordsLimit($this->items[1]['preparazione_corretta'], 6) ?>
-                        </p>
+                <div class="col-md-6">
 
-                    </div>
-                </article>
+                    <?php new RicettaArticle($this->items[0]); ?>
 
+                </div>
+                <div class="col-md-6">
+
+                <?php new RicettaArticle($this->items[1]); ?>
+
+                </div>
+                <div class="col-md-3">
+
+                <?php new RicettaArticle($this->items[2]); ?>
+
+
+
+                </div>
+                <div class="col-md-3">
+
+                <?php new RicettaArticle($this->items[3]); ?>
+
+                </div>
+                <div class="col-md-3">
+
+                <?php new RicettaArticle($this->items[4]); ?>
+
+
+                </div>
+                <div class="col-md-3">
+
+
+                <?php new RicettaArticle($this->items[5]); ?>
+
+                </div>
             </div>
-            <div class="col-md-3">
+        </section>
 
-            <article class="mb-3">
-                    <div class="article-img">
-                        <img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
-                    </div>
-                    <div class="article-content">
-                        <h1 class="h6 mb-1 truncate"><?= $this->items[5]['Titolo Articolo'] ?></h1>
-                        <p class="truncate">
-                            <?= wordsLimit($this->items[5]['preparazione_corretta'], 6) ?>
-                        </p>
-
-                    </div>
-                </article>
-
-
-
-            </div>
-            <div class="col-md-3">
-
-            <article class="mb-3">
-                    <div class="article-img">
-                        <img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
-                    </div>
-                    <div class="article-content">
-                        <h1 class="h6 mb-1 truncate"><?= $this->items[2]['Titolo Articolo'] ?></h1>
-                        <p class="truncate">
-                            <?= wordsLimit($this->items[2]['preparazione_corretta'], 6) ?>
-                        </p>
-
-                    </div>
-                </article>
-
-            </div>
-            <div class="col-md-3">
-
-            <article class="mb-3">
-                    <div class="article-img">
-                        <img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
-                    </div>
-                    <div class="article-content">
-                        <h1 class="h6 mb-1 truncate"><?= $this->items[3]['Titolo Articolo'] ?></h1>
-                        <p class="truncate">
-                            <?= wordsLimit($this->items[3]['preparazione_corretta'], 6) ?>
-                        </p>
-
-                    </div>
-                </article>
-
-
-
-            </div>
-            <div class="col-md-3">
-
-
-            <article class="mb-3">
-                    <div class="article-img">
-                        <img class="img-fluid" src="https://dummyimage.com/600x600/ebdfeb/c0c2e0&text=foto+ricetta" alt="">
-                    </div>
-                    <div class="article-content">
-                        <h1 class="h6 mb-1 truncate"><?= $this->items[4]['Titolo Articolo'] ?></h1>
-                        <p class="truncate">
-                            <?= wordsLimit($this->items[4]['preparazione_corretta'], 6) ?>
-                        </p>
-
-                    </div>
-                </article>
-
-            </div>
-        </div>
 <?php }
 }

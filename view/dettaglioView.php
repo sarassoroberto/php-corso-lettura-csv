@@ -23,14 +23,14 @@
 			<aside class="col-md-4 pl-sm-0">
 
 				<?php ArticleList::render([
-					'header' => 'Ciccio 2',
+					'header' => 'Antipasti',
 					'data' => $antipasti,
 					'view' => 'article-list-small',
 					'limit' => 3,
 				]); ?>
 
 				<?php ArticleList::render([
-					'header' => 'Ciccio 1',
+					'header' => 'Dolci',
 					'data' => $antipasti,
 					'view' => 'article-list-small',
 					'limit' => 3,
